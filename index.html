@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="object.css">
+</head>
+
+<body class="text-center">
+  <form class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address">
+    <br><br>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password">
+    <br><br>
+    <button type = "button" id="signin">Sign in</button>
+  </form>
+
+  <script>
+    document.getElementById('signin').addEventListener("click", function () {
+      var email = document.getElementById('inputEmail').value;
+      var pass = document.getElementById('inputPassword').value;
+      if (email && pass) {
+        signinbtn(email, pass);
+      }
+      else {
+        console.log("Please fill in the form correctly.");
+      }
+    });
+    function signinbtn(email, pass) {
+      document.cookie = email;
+      console.log("user - authenticated");
+      location.assign("https://tekkyboy.github.io/Super-Cool-Page/");
+    }
+
+  </script>
+</body>
+
+</html>
